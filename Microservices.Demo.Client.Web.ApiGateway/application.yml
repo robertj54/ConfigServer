@@ -150,12 +150,14 @@ Routes:
         ServiceName: Microservices.Demo.Reports.API
         UpstreamHttpMethod: 
             - Get
-        #AuthenticationOptions:
-            #AuthenticationProviderKey: ApiSecurityAuthenticationScheme
-  #          AllowedScopes: 
-  #              -
-        #RouteClaimsRequirement:
-            #userType: SALESMAN      
+        FileCacheOptions: 
+            TtlSeconds: 15
+        AuthenticationOptions:
+            AuthenticationProviderKey: ApiSecurityAuthenticationScheme
+#            AllowedScopes:
+#                -      
+        RouteClaimsRequirement:
+            userType: SALESMAN      
         DangerousAcceptAnyServerCertificateValidator: true
         AddHeadersToRequest:
             AgentLogin: Claims[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier] > value[0] > |
