@@ -60,12 +60,12 @@ Routes:
             - Get
         FileCacheOptions: 
             TtlSeconds: 15
-        #AuthenticationOptions:
-            #AuthenticationProviderKey: ApiSecurityAuthenticationScheme
+        AuthenticationOptions:
+            AuthenticationProviderKey: ApiSecurityAuthenticationScheme
  #           AllowedScopes:
  #               -      
-        #RouteClaimsRequirement:
-            #userType: SALESMAN      
+        RouteClaimsRequirement:
+            userType: SALESMAN      
         DangerousAcceptAnyServerCertificateValidator: true
     -
         DownstreamPathTemplate: /api/Offers
@@ -150,6 +150,24 @@ Routes:
         ServiceName: Microservices.Demo.Reports.API
         UpstreamHttpMethod: 
             - Get
+        FileCacheOptions: 
+            TtlSeconds: 15
+        AuthenticationOptions:
+            AuthenticationProviderKey: ApiSecurityAuthenticationScheme
+#            AllowedScopes:
+#                -      
+        RouteClaimsRequirement:
+            userType: SALESMAN      
+        DangerousAcceptAnyServerCertificateValidator: true
+        AddHeadersToRequest:
+            AgentLogin: Claims[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier] > value[0] > |
+    -
+        DownstreamPathTemplate: /api/report
+        DownstreamScheme: http
+        UpstreamPathTemplate: /api/report
+        ServiceName: Microservices.Demo.Reports.API
+        UpstreamHttpMethod: 
+            - Post
         FileCacheOptions: 
             TtlSeconds: 15
         AuthenticationOptions:
