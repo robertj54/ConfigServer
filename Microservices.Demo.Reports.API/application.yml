@@ -4,5 +4,5 @@ ServicesUrl:
 ElasticApm:
     SecretToken: 
     ServerUrls: http://microservices.demo.apm-server:8200
-    ServiceName: Microservices.Demo.Report.API
+    ServiceName: Microservices.Demo.Reports.API
     Environment: production
