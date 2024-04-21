@@ -163,9 +163,9 @@ Routes:
             AgentLogin: Claims[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier] > value[0] > |
     -
         DownstreamPathTemplate: /api/reports
-        DownstreamScheme: https
-        UpstreamPathTemplate: /api/reports
-        ServiceName: Microservices.Demo.ReportsRJ54.API
+        DownstreamScheme: http
+        UpstreamPathTemplate: /api/report
+        ServiceName: Microservices.Demo.Reports.API
         UpstreamHttpMethod: 
             - Get
         FileCacheOptions: 
