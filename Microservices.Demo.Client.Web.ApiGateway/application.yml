@@ -165,7 +165,7 @@ Routes:
         DownstreamPathTemplate: /api/reports
         DownstreamScheme: http
         UpstreamPathTemplate: /api/reports
-        ServiceName: Microservices.Demo.Reports54.API
+        ServiceName: Microservices.Demo.ReportsRJ54.API
         UpstreamHttpMethod: 
             - Get
         FileCacheOptions: 
